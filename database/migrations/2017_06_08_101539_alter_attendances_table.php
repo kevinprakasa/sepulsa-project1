@@ -17,7 +17,7 @@ class AlterAttendancesTable extends Migration
             //
             $table->foreign('guest_id')->references('id')->on('users');
             $table->foreign('pic_id')->references('id')->on('users');
-            $table->foreign('by_id')->references('id')->on('admins');
+            //$table->foreign('by_id')->references('id')->on('admins');
         });
     }
 
@@ -32,8 +32,7 @@ class AlterAttendancesTable extends Migration
             //
             $table->dropForeign(['guest_id']);
             $table->dropForeign(['pic_id']);
-            $table->dropForeign(['by_id']);
-
+            //$table->dropForeign(['by_id']);
         });
     }
 }

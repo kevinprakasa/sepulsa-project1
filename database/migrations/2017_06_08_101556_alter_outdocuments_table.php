@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterDocumentsTable extends Migration
+class AlterOutDocumentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AlterDocumentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('documents', function (Blueprint $table) {
+        Schema::table('outdocuments', function (Blueprint $table) {
             $table->foreign('from_id')->references('id')->on('users');
             $table->foreign('to_id')->references('id')->on('users');
             $table->foreign('by_id')->references('id')->on('admins');
@@ -27,7 +27,7 @@ class AlterDocumentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('documents', function (Blueprint $table) {
+        Schema::table('outdocuments', function (Blueprint $table) {
             $table->dropForeign(['from_id']);
             $table->dropForeign(['to_id']);
             $table->dropForeign(['by_id']);
