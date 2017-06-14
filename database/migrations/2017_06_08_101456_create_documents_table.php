@@ -16,6 +16,7 @@ class CreateDocumentsTable extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
+            $table->enum('type',['in','out'])
             $table->integer('from_id')->length(10)->unsigned();
             $table->integer('to_id')->length(10)->unsigned();
             $table->string('description');

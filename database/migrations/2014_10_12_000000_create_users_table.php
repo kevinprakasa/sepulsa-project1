@@ -16,10 +16,10 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('id_company')->nullable()->length(10)->unsigned();
+            $table->integer('id_company')->length(10)->unsigned();
             $table->string('email')->nullable()->unique();
             $table->string('phone')->nullable();
-            $table->enum('type',['in','out']);
+            $table->enum('type',['internal','external']);
             $table->timestamps();
         });
     }
