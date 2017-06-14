@@ -19,7 +19,7 @@ class CreateAttendancesTable extends Migration
             $table->integer('pic_id')->length(10)->unsigned();
             $table->date('date');
             $table->string('description');
-            $table->integer('by_id')->length(10)->unsigned();
+            //$table->integer('by_id')->length(10)->unsigned();
             $table->timestamps();
         });
     }
