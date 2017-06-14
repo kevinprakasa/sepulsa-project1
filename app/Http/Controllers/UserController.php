@@ -16,10 +16,11 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->phone = $request->phone;
         $user->email = $request->email;
+        $user->id_company = $request->id_company;
         if ($request->type === 'internal'){
-          $user->type = 'in';
+          $user->type = 'internal';
         }else{
-          $user->type = 'out';
+          $user->type = 'external';
         }
         $user->save();
         return redirect()->route('user-add');

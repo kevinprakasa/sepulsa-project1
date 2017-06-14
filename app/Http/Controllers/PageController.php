@@ -20,10 +20,16 @@ class PageController extends Controller
       return view('company/show-company',['company'=>$company]);
     }
     public function addUserForm(){
-      return view('user/add-user-form');
+      $companies = Company::all();
+      return view('user/add-user-form',['companies'=>$companies]);
     }
     public function editUser($id){
       $user = User::find($id);
-      return view('user/edit-user-form',['user'=>$user]);
+      $companies = Company::all();
+      $company = $user->company;
+      return view('user/edit-user-form',['user'=>$user,'company'=>$company,'companies'=>$companies]);
+    }
+    public function addAttendanceForm(){
+      return view('attendance/add-attendance-form');
     }
 }
